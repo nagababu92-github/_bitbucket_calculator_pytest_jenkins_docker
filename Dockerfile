@@ -1,7 +1,6 @@
 FROM python:3.6-slim
 RUN apt-get update \
     && apt-get -y install curl \
-    another-package
 RUN curl -fsSLO https://get.docker.com/builds/Linux/x86_64/docker-17.04.0-ce.tgz \
   && tar xzvf docker-17.04.0-ce.tgz \
   && mv docker/docker /usr/local/bin \
