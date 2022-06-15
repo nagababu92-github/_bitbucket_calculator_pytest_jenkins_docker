@@ -1,7 +1,7 @@
 FROM python:3.6-slim
 RUN apt-get update \
     && apt-get -y install curl
-RUN apt install docker.io    
+RUN apt install -y docker.io    
 COPY . /python-test-calculator
 WORKDIR /python-test-calculator
 RUN pip freeze > requirements.txt
