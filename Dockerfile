@@ -11,7 +11,6 @@ cmd cd reports
 RUN apt-get update
 RUN apt-get -y install vim
 RUN touch result.xml
-SRC_PATH|- CONTAINER:DEST_PATH
 RUN docker cp .result.xml /$CONTAINER_NAME:/python-test-calculator/reports/result.xml reports/
 #cmd :wq!
 #RUN :wq!
