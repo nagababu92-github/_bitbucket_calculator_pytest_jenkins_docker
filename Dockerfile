@@ -3,5 +3,6 @@ COPY . /python-test-calculator
 WORKDIR /python-test-calculator
 RUN pip freeze > requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
-RUN ["pytest", "-v", "--junitxml=reports/result.xml"]
+#RUN ["pytest", "-v", "--junitxml=reports/result.xml"]
+RUN ["python", "-m", "pytest" "--junitxml=reports/result.xml"]
 CMD tail -f /dev/null
