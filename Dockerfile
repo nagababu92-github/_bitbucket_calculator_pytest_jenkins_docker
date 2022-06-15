@@ -11,7 +11,7 @@ cmd cd reports
 RUN apt-get update
 RUN apt-get -y install vim
 RUN touch result.xml
-RUN docker cp $CONTAINER_NAME:/python-test-calculator/reports/result.xml reports/
+RUN docker cp result.xml $CONTAINER_NAME:/python-test-calculator/reports/result.xml reports/
 #cmd :wq!
 #RUN :wq!
 CMD ["python", "-m", "pytest" "--junitxml=reports/result.xml"]
