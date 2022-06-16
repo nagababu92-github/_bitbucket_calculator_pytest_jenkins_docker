@@ -30,5 +30,5 @@ RUN touch result.xml
 #cmd :wq!
 #RUN :wq!
 CMD ["python", "-m", "pytest"]
-RUN docker cp .result.xml /$CONTAINER_NAME:/python-test-calculator/reports/result.xml reports/
+#RUN docker cp .result.xml /$CONTAINER_NAME:/python-test-calculator/reports/result.xml reports/
 CMD tail -f /dev/null
