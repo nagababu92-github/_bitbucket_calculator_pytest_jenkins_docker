@@ -20,7 +20,7 @@ COPY . /python-test-calculator
 WORKDIR /python-test-calculator
 RUN pip freeze > requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
-RUN mkdir reports
+#RUN mkdir reports
 cmd cd reports 
 #RUN ["pytest", "-v", "--junitxml=reports/result.xml"]
 RUN apt-get update
