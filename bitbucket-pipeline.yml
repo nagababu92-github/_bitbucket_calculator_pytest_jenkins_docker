@@ -1,0 +1,26 @@
+#  Template python-build
+
+#  This template allows you to validate your python code.
+#  The workflow allows running tests and code linting on the default branch.
+
+#image: python:3.8
+
+pipelines:
+  default:  
+      - step: &build
+         name: Build Docker Image
+         services:
+         - docker
+         script:
+         #- docker build . 
+         #- docker login --u $DOCKER_USERNAME --p $DOCKER_PASSWORD
+         #- echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+         #- sudo chmod 666 /var/run/docker.sock
+         #- docker login --u nagababu92 --p $DOCKER_PASSWORD
+         #- docker login -u="${DOCKER_USERNAME}" -p="${DOCKER_PASSWORD}"
+         #- cat ~/my_password.txt | docker login --username nagababu92 --password-stdin
+         #- echo $DOCKER_PASSWORD | docker login -u nagababuendla92@gmail.com  --password-stdin
+         
+         - docker login --username $DOCKER_USERNAME --password $DOCKER_PASSWORD
+         - docker build -t nagababu92/calculator:latest .
+         - docker push nagababu92/calculator:latest  
